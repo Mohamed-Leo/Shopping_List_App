@@ -1,0 +1,550 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@keyframes backanimation {
+  0% {
+    border-radius: 30% 70% 70% 30%/59% 30% 70% 41%;
+  }
+  25% {
+    border-radius: 64% 36% 70% 30%/61% 52% 48% 39%;
+  }
+  50% {
+    border-radius: 0% 100% 7% 93%/61% 20% 80% 39%;
+  }
+  75% {
+    border-radius: 30% 70% 50% 50%/96% 36% 64% 4%;
+  }
+  100% {
+    border-radius: 30% 70% 50% 50%/30% 74% 26% 70%;
+  }
+}
+html {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+html ::-webkit-scrollbar {
+  width: 8px;
+}
+html ::-webkit-scrollbar-track {
+  background: transparent;
+}
+html ::-webkit-scrollbar-thumb {
+  background: rgba(225, 86, 253, 0.4235294118);
+  border-radius: 10px;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgba(52, 73, 94, 0.5215686275);
+  position: relative;
+  font-family: monospace;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.0823529412);
+  border-radius: 30% 70% 70% 30%/59% 30% 70% 41%;
+  z-index: -1;
+  animation: backanimation 12s linear alternate infinite;
+}
+
+.login-signup-container,
+.reset-password-con {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+.login-signup-container .align-overflow,
+.reset-password-con .align-overflow {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+}
+.login-signup-container .align-overflow .signup,
+.reset-password-con .align-overflow .signup {
+  transform: translateX(100%);
+}
+.login-signup-container .align-overflow .login,
+.reset-password-con .align-overflow .login {
+  transform: translateX(50%);
+}
+.login-signup-container .align-overflow .signup.align-sign-up,
+.reset-password-con .align-overflow .signup.align-sign-up {
+  transform: translateX(-50%);
+}
+.login-signup-container .align-overflow .login.align-sign-in,
+.reset-password-con .align-overflow .login.align-sign-in {
+  transform: translateX(-100%);
+}
+.login-signup-container .login, .login-signup-container .signup, .login-signup-container .reset,
+.reset-password-con .login,
+.reset-password-con .signup,
+.reset-password-con .reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.login-signup-container .login .form, .login-signup-container .signup .form, .login-signup-container .reset .form,
+.reset-password-con .login .form,
+.reset-password-con .signup .form,
+.reset-password-con .reset .form {
+  min-width: 320px;
+  max-width: 85%;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.login-signup-container .login .form h1, .login-signup-container .signup .form h1, .login-signup-container .reset .form h1,
+.reset-password-con .login .form h1,
+.reset-password-con .signup .form h1,
+.reset-password-con .reset .form h1 {
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+.login-signup-container .login .form h3, .login-signup-container .signup .form h3, .login-signup-container .reset .form h3,
+.reset-password-con .login .form h3,
+.reset-password-con .signup .form h3,
+.reset-password-con .reset .form h3 {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.login-signup-container .login .form .sucess-reset, .login-signup-container .signup .form .sucess-reset, .login-signup-container .reset .form .sucess-reset,
+.reset-password-con .login .form .sucess-reset,
+.reset-password-con .signup .form .sucess-reset,
+.reset-password-con .reset .form .sucess-reset {
+  color: #27ae60;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.login-signup-container .login .form h2, .login-signup-container .signup .form h2, .login-signup-container .reset .form h2,
+.reset-password-con .login .form h2,
+.reset-password-con .signup .form h2,
+.reset-password-con .reset .form h2 {
+  color: #fff;
+  font-size: 0.8rem;
+  padding-left: 0.8em;
+}
+.login-signup-container .login .form h2 span, .login-signup-container .signup .form h2 span, .login-signup-container .reset .form h2 span,
+.reset-password-con .login .form h2 span,
+.reset-password-con .signup .form h2 span,
+.reset-password-con .reset .form h2 span {
+  color: aqua;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.login-signup-container .login .form h2 span:hover, .login-signup-container .signup .form h2 span:hover, .login-signup-container .reset .form h2 span:hover,
+.reset-password-con .login .form h2 span:hover,
+.reset-password-con .signup .form h2 span:hover,
+.reset-password-con .reset .form h2 span:hover {
+  opacity: 1;
+}
+.login-signup-container .login .form .other-options, .login-signup-container .signup .form .other-options, .login-signup-container .reset .form .other-options,
+.reset-password-con .login .form .other-options,
+.reset-password-con .signup .form .other-options,
+.reset-password-con .reset .form .other-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 1em;
+}
+.login-signup-container .login .form label, .login-signup-container .signup .form label, .login-signup-container .reset .form label,
+.reset-password-con .login .form label,
+.reset-password-con .signup .form label,
+.reset-password-con .reset .form label {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+.login-signup-container .login .form label h4, .login-signup-container .signup .form label h4, .login-signup-container .reset .form label h4,
+.reset-password-con .login .form label h4,
+.reset-password-con .signup .form label h4,
+.reset-password-con .reset .form label h4 {
+  margin-left: 10px;
+  color: #3498db;
+}
+.login-signup-container .login .form label input, .login-signup-container .signup .form label input, .login-signup-container .reset .form label input,
+.reset-password-con .login .form label input,
+.reset-password-con .signup .form label input,
+.reset-password-con .reset .form label input {
+  color: #fff;
+  transition: 0.4s;
+}
+.login-signup-container .login .form label input::-moz-placeholder, .login-signup-container .signup .form label input::-moz-placeholder, .login-signup-container .reset .form label input::-moz-placeholder, .reset-password-con .login .form label input::-moz-placeholder, .reset-password-con .signup .form label input::-moz-placeholder, .reset-password-con .reset .form label input::-moz-placeholder {
+  color: #2980b9;
+}
+.login-signup-container .login .form label input::placeholder, .login-signup-container .signup .form label input::placeholder, .login-signup-container .reset .form label input::placeholder,
+.reset-password-con .login .form label input::placeholder,
+.reset-password-con .signup .form label input::placeholder,
+.reset-password-con .reset .form label input::placeholder {
+  color: #2980b9;
+}
+.login-signup-container .login .form label .user-div,
+.login-signup-container .login .form label .pass-div, .login-signup-container .signup .form label .user-div,
+.login-signup-container .signup .form label .pass-div, .login-signup-container .reset .form label .user-div,
+.login-signup-container .reset .form label .pass-div,
+.reset-password-con .login .form label .user-div,
+.reset-password-con .login .form label .pass-div,
+.reset-password-con .signup .form label .user-div,
+.reset-password-con .signup .form label .pass-div,
+.reset-password-con .reset .form label .user-div,
+.reset-password-con .reset .form label .pass-div {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 12px #202d3a, inset -6px -6px 12px #384f66;
+  padding: 0.6em 1em;
+}
+.login-signup-container .login .form label .user-div input,
+.login-signup-container .login .form label .pass-div input, .login-signup-container .signup .form label .user-div input,
+.login-signup-container .signup .form label .pass-div input, .login-signup-container .reset .form label .user-div input,
+.login-signup-container .reset .form label .pass-div input,
+.reset-password-con .login .form label .user-div input,
+.reset-password-con .login .form label .pass-div input,
+.reset-password-con .signup .form label .user-div input,
+.reset-password-con .signup .form label .pass-div input,
+.reset-password-con .reset .form label .user-div input,
+.reset-password-con .reset .form label .pass-div input {
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+  background-color: transparent;
+  transition: 0.4s;
+  height: 100%;
+}
+.login-signup-container .login .form label .user-div input::-moz-placeholder, .login-signup-container .login .form label .pass-div input::-moz-placeholder, .login-signup-container .signup .form label .user-div input::-moz-placeholder, .login-signup-container .signup .form label .pass-div input::-moz-placeholder, .login-signup-container .reset .form label .user-div input::-moz-placeholder, .login-signup-container .reset .form label .pass-div input::-moz-placeholder, .reset-password-con .login .form label .user-div input::-moz-placeholder, .reset-password-con .login .form label .pass-div input::-moz-placeholder, .reset-password-con .signup .form label .user-div input::-moz-placeholder, .reset-password-con .signup .form label .pass-div input::-moz-placeholder, .reset-password-con .reset .form label .user-div input::-moz-placeholder, .reset-password-con .reset .form label .pass-div input::-moz-placeholder {
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+.login-signup-container .login .form label .user-div input::placeholder,
+.login-signup-container .login .form label .pass-div input::placeholder, .login-signup-container .signup .form label .user-div input::placeholder,
+.login-signup-container .signup .form label .pass-div input::placeholder, .login-signup-container .reset .form label .user-div input::placeholder,
+.login-signup-container .reset .form label .pass-div input::placeholder,
+.reset-password-con .login .form label .user-div input::placeholder,
+.reset-password-con .login .form label .pass-div input::placeholder,
+.reset-password-con .signup .form label .user-div input::placeholder,
+.reset-password-con .signup .form label .pass-div input::placeholder,
+.reset-password-con .reset .form label .user-div input::placeholder,
+.reset-password-con .reset .form label .pass-div input::placeholder {
+  transition: 0.4s;
+}
+.login-signup-container .login .form label .user-div input:focus::-moz-placeholder, .login-signup-container .login .form label .pass-div input:focus::-moz-placeholder, .login-signup-container .signup .form label .user-div input:focus::-moz-placeholder, .login-signup-container .signup .form label .pass-div input:focus::-moz-placeholder, .login-signup-container .reset .form label .user-div input:focus::-moz-placeholder, .login-signup-container .reset .form label .pass-div input:focus::-moz-placeholder, .reset-password-con .login .form label .user-div input:focus::-moz-placeholder, .reset-password-con .login .form label .pass-div input:focus::-moz-placeholder, .reset-password-con .signup .form label .user-div input:focus::-moz-placeholder, .reset-password-con .signup .form label .pass-div input:focus::-moz-placeholder, .reset-password-con .reset .form label .user-div input:focus::-moz-placeholder, .reset-password-con .reset .form label .pass-div input:focus::-moz-placeholder {
+  color: #fff;
+}
+.login-signup-container .login .form label .user-div input:focus::placeholder,
+.login-signup-container .login .form label .pass-div input:focus::placeholder, .login-signup-container .signup .form label .user-div input:focus::placeholder,
+.login-signup-container .signup .form label .pass-div input:focus::placeholder, .login-signup-container .reset .form label .user-div input:focus::placeholder,
+.login-signup-container .reset .form label .pass-div input:focus::placeholder,
+.reset-password-con .login .form label .user-div input:focus::placeholder,
+.reset-password-con .login .form label .pass-div input:focus::placeholder,
+.reset-password-con .signup .form label .user-div input:focus::placeholder,
+.reset-password-con .signup .form label .pass-div input:focus::placeholder,
+.reset-password-con .reset .form label .user-div input:focus::placeholder,
+.reset-password-con .reset .form label .pass-div input:focus::placeholder {
+  color: #fff;
+}
+.login-signup-container .login .form label .pass-div, .login-signup-container .signup .form label .pass-div, .login-signup-container .reset .form label .pass-div,
+.reset-password-con .login .form label .pass-div,
+.reset-password-con .signup .form label .pass-div,
+.reset-password-con .reset .form label .pass-div {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 12px #202d3a, inset -6px -6px 12px #384f66;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.login-signup-container .login .form label .pass-div i, .login-signup-container .signup .form label .pass-div i, .login-signup-container .reset .form label .pass-div i,
+.reset-password-con .login .form label .pass-div i,
+.reset-password-con .signup .form label .pass-div i,
+.reset-password-con .reset .form label .pass-div i {
+  color: #3498db;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.login-signup-container .login .form button, .login-signup-container .signup .form button, .login-signup-container .reset .form button,
+.reset-password-con .login .form button,
+.reset-password-con .signup .form button,
+.reset-password-con .reset .form button {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0.5em;
+  font-size: 1.8rem;
+  border-radius: 50px;
+  border: none;
+  background-color: #34495e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.login-signup-container .login .form button:hover, .login-signup-container .signup .form button:hover, .login-signup-container .reset .form button:hover,
+.reset-password-con .login .form button:hover,
+.reset-password-con .signup .form button:hover,
+.reset-password-con .reset .form button:hover {
+  background-color: #3498db;
+}
+
+.reset-password-con {
+  z-index: 700;
+  display: none;
+}
+.reset-password-con h2 {
+  font-size: 1.2rem !important;
+  text-align: center;
+  padding: 0 !important;
+}
+.reset-password-con h2 span {
+  display: block;
+}
+.reset-password-con button {
+  width: 70% !important;
+}
+
+header {
+  padding: 1.5em;
+}
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+header nav .user-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(52, 73, 94, 0.5215686275);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+header nav .logout {
+  background-color: rgba(52, 73, 94, 0.5215686275);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+  overflow: hidden;
+}
+header nav .logout p {
+  padding: 0.5em;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+header nav .logout p:hover {
+  opacity: 1;
+  background-color: #2980b9;
+}
+
+.orders-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1em;
+}
+.orders-container .orders {
+  min-width: 320px;
+  max-width: 85%;
+  max-height: 560px;
+  padding: 2em 1.5em;
+}
+.orders-container img {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.orders-container .alert {
+  display: block;
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+.orders-container input {
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.4s;
+}
+.orders-container input:focus {
+  background-color: #DCE1EB;
+}
+.orders-container button {
+  width: 100%;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.8em 0;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.orders-container button:hover {
+  background-color: #c0392b;
+}
+.orders-container ul {
+  margin-top: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  list-style: none;
+  gap: 15px;
+}
+.orders-container ul li {
+  background-color: #fff;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  padding: 0.5em 1em;
+  color: #432000;
+  text-align: center;
+  flex-grow: 1;
+  box-shadow: 0px 2px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.orders-container ul li:hover {
+  background-color: rgba(189, 46, 221, 0.6235294118);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .orders-container {
+    min-height: 500px;
+    max-height: 700px;
+  }
+  .orders-container .orders {
+    overflow-y: auto;
+  }
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #192a56;
+  z-index: 1000;
+}
+.loader .align-loader {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes honeycomb {
+  0%, 20%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  30%, 70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.loader .honeycomb {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+.loader .honeycomb div {
+  animation: honeycomb 2.1s infinite backwards;
+  background: #f3f3f3;
+  height: 12px;
+  margin-top: 6px;
+  position: absolute;
+  width: 24px;
+}
+.loader .honeycomb div:after, .loader .honeycomb div:before {
+  content: "";
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.loader .honeycomb div:after {
+  top: -6px;
+  border-bottom: 6px solid #f3f3f3;
+}
+.loader .honeycomb div:before {
+  bottom: -6px;
+  border-top: 6px solid #f3f3f3;
+}
+.loader .honeycomb div:nth-child(1) {
+  animation-delay: 0s;
+  left: -28px;
+  top: 0;
+}
+.loader .honeycomb div:nth-child(2) {
+  animation-delay: 0.1s;
+  left: -14px;
+  top: 22px;
+}
+.loader .honeycomb div:nth-child(3) {
+  animation-delay: 0.2s;
+  left: 14px;
+  top: 22px;
+}
+.loader .honeycomb div:nth-child(4) {
+  animation-delay: 0.3s;
+  left: 28px;
+  top: 0;
+}
+.loader .honeycomb div:nth-child(5) {
+  animation-delay: 0.4s;
+  left: 14px;
+  top: -22px;
+}
+.loader .honeycomb div:nth-child(6) {
+  animation-delay: 0.5s;
+  left: -14px;
+  top: -22px;
+}
+.loader .honeycomb div:nth-child(7) {
+  animation-delay: 0.6s;
+  left: 0;
+  top: 0;
+}/*# sourceMappingURL=home.css.map */
