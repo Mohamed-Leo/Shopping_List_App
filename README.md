@@ -1,2 +1,3 @@
 # Shopping_List_App
-shoopin list web app with firebase backend data
+shopping list web app with Firebase backend data
+## link : https://mohamed-leo.github.io/Shopping_List_App/home
