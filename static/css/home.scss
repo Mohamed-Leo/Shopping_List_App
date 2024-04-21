@@ -67,6 +67,77 @@ body {
 }
 
 
+// nav------------------------------------------------
+header {
+    padding: 1.5em;
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+
+        .user-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #34495e85;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    }
+}
+
+// nav-splitted-menu-------
+.nav-splitted-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #192a56;
+    z-index: 900;
+    transform: translate(-100%);
+    transition: .3s;
+
+    i {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    ul {
+        margin-top: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2em;
+        list-style: none;
+        gap: 50px;
+        height: 50%;
+
+        li {
+            color: #fff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+        }
+    }
+}
+
+// close .nav-splitted-menu ---
+.nav-splitted-menu.show-nav-splitted-menu {
+    transform: translate(0);
+}
+
+
 .login-signup-container, 
 .reset-password-con {
     position: fixed;
@@ -79,6 +150,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 500;
+    display: none;
 
     .align-overflow {
         overflow: hidden;
@@ -213,10 +285,6 @@ body {
 
                 // pass div---
                 .pass-div {
-                    width: 100%;
-                    margin-top: 10px;
-                    border-radius: 50px;
-                    box-shadow: inset 6px 6px 12px #202d3a,inset -6px -6px 12px #384f66;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -271,53 +339,7 @@ body {
 }
 
 
-// nav------------------------------------------------
-header {
-    padding: 1.5em;
 
-    nav {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 20px;
-
-        .user-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #34495e85;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 2rem;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        .logout {
-            background-color: #34495e85;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: .3s;
-            display: none;
-            overflow: hidden;
-
-            p {
-                padding: .5em;
-                transition: .3s;
-                opacity: .7;
-
-                &:hover {
-                    opacity: 1;
-                    background-color: #2980b9;
-                }
-            }
-        }
-    }
-}
 
 
 

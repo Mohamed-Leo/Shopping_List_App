@@ -53,7 +53,9 @@ user_icon = document.querySelector('.user-icon'),
 logout_btn = document.getElementById('logout_btn'),
 reset_pass = document.getElementById('reset_pass'),
 back_sin_in = document.getElementById('back_sin_in'),
-resetBtn = document.getElementById('reset');
+resetBtn = document.getElementById('reset'),
+close_nav_menu = document.getElementById('close_nav_menu'),
+nav_splitted_menu = document.querySelector('.nav-splitted-menu');
 
 
 
@@ -404,33 +406,6 @@ resetBtn.addEventListener('click' , async _ => {
 });
 
 
-// // Add onAuthStateChanged listener to change password after reset from mail------
-// auth.onAuthStateChanged(user => {
-//     if(user) {
-//         // User is signed in, update password in real-time database
-//         // updatePasswordInDatabase(user.uid, user.email);
-
-//         console.log(user);
-//     }
-// })
-
-// // Function to update password in real-time database------
-// function updatePasswordInDatabase(userId, email) {
-//     // Reference to the user's data in the database
-//     const userRef = ref(db, `users/${userId}`);
-
-//     // userdataObj-
-//     // let userDataObj = {
-//     //     email : email,
-//     //     password : 
-//     // };
-
-//     // Update the password in the database
-//     update(userRef , )
-// }
-
-
-
 
 // back to sign in page----------------------------------------------------------------------------------------------------
 back_sin_in.addEventListener('click' , _ => {
@@ -442,11 +417,12 @@ back_sin_in.addEventListener('click' , _ => {
 
 // log out user--------------------------------------------------------------------------------------------------------------
 logout_btn.addEventListener('click' , _ => {
+    // close the nav menu---
+    showNavSplittedmenu();
+
     // Log out the authenticated user
     signOut(auth)
     .then(() => {
-        // Log out slide toggle------
-        user_icon.click();
         // delete user token------
         localStorage.removeItem('userToken');
 
@@ -468,13 +444,24 @@ $('#login_menu_btn').click(_ => {
     showHideLoader();
     login_signup_container.style.display = "flex";
 
+    // close the nav menu---
+    showNavSplittedmenu();
+
     // close the log---
     $('.logout').slideToggle();
 });
 
+// TODO: 
+// click to show nav menu-----------------------------------------------------------------------------------------------------
+user_icon.addEventListener('click' , _ => nav_splitted_menu.classList.add('show-nav-splitted-menu'));
 
-// click to show logout-----------------------------------------------------------------------------------------------------
-user_icon.addEventListener('click' , _ => $('.logout').slideToggle());
+close_nav_menu.addEventListener('click' , _ => showNavSplittedmenu());
+
+
+function showNavSplittedmenu() {
+    nav_splitted_menu.classList.remove('show-nav-splitted-menu');
+    console.log("closed");
+}
 
 
 
