@@ -451,7 +451,7 @@ $('#login_menu_btn').click(_ => {
     $('.logout').slideToggle();
 });
 
-// TODO: 
+
 // click to show nav menu-----------------------------------------------------------------------------------------------------
 user_icon.addEventListener('click' , _ => nav_splitted_menu.classList.add('show-nav-splitted-menu'));
 
@@ -460,7 +460,6 @@ close_nav_menu.addEventListener('click' , _ => showNavSplittedmenu());
 
 function showNavSplittedmenu() {
     nav_splitted_menu.classList.remove('show-nav-splitted-menu');
-    console.log("closed");
 }
 
 
